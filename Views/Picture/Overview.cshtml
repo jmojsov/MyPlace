@@ -1,0 +1,23 @@
+﻿@model List<MyPlace.ViewModels.PictureViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+  
+    <div class="row">
+        @foreach (var picture in Model)
+        {
+            <div class="col-md-4">
+
+                    <div class="card">
+                        <img src="@picture.ImageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a asp-controller="Picture" asp-action="Details" asp-route-id="@picture.Id">@picture.Email</a>
+                            <p class="card-text">@picture.DateCreated</p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+  
